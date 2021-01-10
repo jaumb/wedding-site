@@ -1,3 +1,3 @@
 # wedding-site
 
-Visit `https://alexandjeff.life`
+Visit [alexandjeff.life](http://alexandjeff.life)
