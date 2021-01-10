@@ -202,17 +202,30 @@ $(document).ready(function () {
 /********************** Extras **********************/
 
 function initMap() {
-    var location = {lat: 42.376936, lng: -72.709970};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
+        zoom: 12,
+        center: new google.maps.LatLng(42.347844, -72.679247),
+        scrollwheel: false,
     });
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
+    var features = [
+        {
+            position: new google.maps.LatLng(42.376919690090794, -72.71014182696531),
+            type: "venue",
+        },
+        {
+            position: new google.maps.LatLng(42.31216569495927, -72.6251767023502),
+            type: "hotel",
+        },
+    ];
+
+    for (var i = 0; i < features.length; i++) {
+        var marker = new google.maps.Marker({
+            position: features[i].position,
+            icon: icons[features[i].type].icon,
+            map: map,
+        });
+    }
 }
 
 // alert_markup
